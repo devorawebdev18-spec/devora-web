@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devorawebdev18-spec.github.io/devora-web/sitemap.xml
+Sitemap: https://devora-web.online/sitemap.xml
