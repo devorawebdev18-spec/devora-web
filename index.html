@@ -175,6 +175,19 @@ footer{border-top:1px solid #e3f1f8;padding:26px 0;text-align:center;color:var(-
 body{background:linear-gradient(180deg,#eef8fe 0%,#ffffff 45%,#eaf5fc 100%);background-attachment:fixed}
 .hero{background:radial-gradient(900px 340px at 85% -10%,rgba(0,160,224,.16),transparent),radial-gradient(700px 300px at 5% 110%,rgba(0,96,224,.10),transparent),linear-gradient(180deg,var(--blue-soft),transparent)}
 #why{background:linear-gradient(180deg,transparent,rgba(0,160,224,.05),transparent)}
+
+/* stats panel (approved claims) */
+.stats-panel{display:flex;flex-wrap:wrap;justify-content:center;background:#f2f6fa;border:1px solid #e3eef5;border-radius:24px;box-shadow:0 10px 30px rgba(16,48,63,.08);padding:26px 12px;margin:0 auto 36px;max-width:920px}
+.stat{flex:1;min-width:170px;text-align:center;padding:8px 16px}
+.stat + .stat{border-right:1px solid #dde8f0}
+.stat-num{font-size:2rem;font-weight:800;color:var(--ink);line-height:1.3}
+.stat-label{color:var(--muted);font-weight:600;font-size:.95rem}
+@media(max-width:600px){.stat{min-width:45%}.stat + .stat{border-right:0}.stat:nth-child(2){border-right:1px solid #dde8f0}}
+
+/* footer credit */
+.credit{margin-top:6px;font-size:.85rem}
+.credit a{color:var(--blue-dark);font-weight:700;text-decoration:none}
+.credit a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -386,9 +399,12 @@ body{background:linear-gradient(180deg,#eef8fe 0%,#ffffff 45%,#eaf5fc 100%);back
       <div class="sec-head">
         <h2>لماذا نحن؟</h2>
       </div>
+      <div class="stats-panel">
+        <div class="stat"><div class="stat-num">+500</div><div class="stat-label">موقع صممناه</div></div>
+        <div class="stat"><div class="stat-num">خبرة سنوات</div><div class="stat-label">في إعلانات Google Ads</div></div>
+        <div class="stat"><div class="stat-num">خبرة</div><div class="stat-label">في تصميم المواقع</div></div>
+      </div>
       <div class="why-list">
-        <div class="why-item"><span class="check">✓</span><div><h3>خبرة في تصميم المواقع</h3><p>صممنا أكثر من 500 موقع.</p></div></div>
-        <div class="why-item"><span class="check">✓</span><div><h3>سنوات من الخبرة في إعلانات Google Ads</h3><p>إدارة حملاتك الإعلانية على جوجل باحتراف.</p></div></div>
         <div class="why-item"><span class="check">✓</span><div><h3>تصميم يعبر عن نشاطك</h3><p>شكل مخصص لهويتك، مش قالب جاهز بعينه.</p></div></div>
         <div class="why-item"><span class="check">✓</span><div><h3>سرعة وأداء</h3><p>موقع خفيف بيفتح بسرعة على أي جهاز.</p></div></div>
         <div class="why-item"><span class="check">✓</span><div><h3>متجاوب مع كل الأجهزة</h3><p>موبايل وتابلت وكمبيوتر بنفس الجودة.</p></div></div>
@@ -412,7 +428,9 @@ body{background:linear-gradient(180deg,#eef8fe 0%,#ffffff 45%,#eaf5fc 100%);back
 </main>
 
 <footer>
-  <div class="wrap">Devora-Web © 2026 — تصميم وتطوير مواقع وإعلانات ممولة</div>
+  <div class="wrap">Devora-Web © 2026 — تصميم وتطوير مواقع وإعلانات ممولة
+    <div class="credit">تم التصميم بواسطة <a href="https://www.facebook.com/share/1CueXCvaQ8/" target="_blank" rel="noopener">devora web</a></div>
+  </div>
 </footer>
 
 
