@@ -464,5 +464,32 @@ body{background:linear-gradient(180deg,#eef8fe 0%,#ffffff 45%,#eaf5fc 100%);back
     <label for="fab-tel" class="fab-btn tel" aria-label="اتصال تليفوني"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></label>
   </div>
 </div>
+<script>
+(function () {
+  var el = document.querySelector('.stats-panel .stat-num');
+  if (!el) return;
+  var FINAL = 500;
+  function render(n) { el.textContent = '+' + n; }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    render(FINAL);
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting) return;
+    io.disconnect();
+    var t0 = null, DUR = 1600;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / DUR, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      render(Math.round(e * FINAL));
+      if (p < 1) requestAnimationFrame(step); else render(FINAL);
+    }
+    render(0);
+    requestAnimationFrame(step);
+  }, {threshold: 0.4});
+  io.observe(el);
+})();
+</script>
 </body>
 </html>
